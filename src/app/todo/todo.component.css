@@ -1,0 +1,21 @@
+.header {
+    background: #f5f2f2;
+    min-height: 200px;
+    position: relative;
+    margin-bottom: 1.5em;
+}
+
+.header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hover-cursor {
+    cursor: pointer;
+}
+
+.toDoList {
+    margin: 5px 0;
+}

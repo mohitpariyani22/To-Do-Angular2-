@@ -1,0 +1,24 @@
+<div class="header">
+    <h1>To Do List App</h1>
+</div>
+<div class="input-group">
+    <input type="text" class="form-control" id="exampleInputAmount" #itemTitle (keypress)="onPressEnter($event.keyCode,itemTitle)">
+    <div class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)">
+        <i class="glyphicon glyphicon-plus-sign"></i>
+    </div>
+    <!-- <div class="input-group-addon hover-cursor" (click)="deleteAll()">
+        <i class="glyphicon glyphicon-minus-sign"></i>
+    </div> -->
+</div>
+<div class="toDoList">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of toDoListArray" (click)="active(item)">
+            <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alertCheck(item.$key,item.isChecked)">
+              <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+          </span> {{item.title}}
+            <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)">
+              <i class="fa fa-trash-o fa-lg"></i>
+          </span>
+        </li>
+    </ul>
+</div>
