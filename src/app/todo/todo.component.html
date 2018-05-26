@@ -1,10 +1,14 @@
 <div class="header">
-    <h1>To Do List App</h1>
+    <button class="btn btn-default logOutBtn" (click)="logout()">Log Out</button>
+    <h1>Hello {{name}}!</h1>
 </div>
 <div class="input-group">
-    <input type="text" class="form-control" id="exampleInputAmount" #itemTitle (keypress)="onPressEnter($event.keyCode,itemTitle)">
-    <div class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)">
+    <input type="text" class="form-control" id="exampleInputAmount" [(ngModel)]="value" #itemTitle (keypress)="onPressEnter($event.keyCode,itemTitle)" placeholder="Write things you want me to remember for you!">
+    <div *ngIf="edit" class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)">
         <i class="glyphicon glyphicon-plus-sign"></i>
+    </div>
+    <div *ngIf="!edit" class="input-group-addon hover-cursor" (click)="updateList()">
+        <i class="glyphicon glyphicon-ok"></i>
     </div>
     <!-- <div class="input-group-addon hover-cursor" (click)="deleteAll()">
         <i class="glyphicon glyphicon-minus-sign"></i>
@@ -15,10 +19,17 @@
         <li class="list-group-item" *ngFor="let item of toDoListArray" (click)="active(item)">
             <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alertCheck(item.$key,item.isChecked)">
               <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
-          </span> {{item.title}}
+            </span> {{item.title}}
             <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)">
-              <i class="fa fa-trash-o fa-lg"></i>
-          </span>
+                <i class="fa fa-trash-o fa-lg"></i>
+                <!-- <i class="glyphicon glyphicon-trash"></i> -->
+            </span>
+            <span class="hover-cursor text-danger pull-right" style="margin-right:5px" (click)="onEdit(item.$key,item.title)">
+                <i class="glyphicon glyphicon-edit"></i>
+            </span>
+            <!-- <span class="hover-cursor text-danger pull-right" style="margin-right:5px">
+                <i class="glyphicon glyphicon-copy"></i>
+            </span> -->
         </li>
     </ul>
 </div>

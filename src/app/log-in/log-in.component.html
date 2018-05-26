@@ -1,0 +1,57 @@
+<!-- <div class="signInEmail">
+    <div class="small-container">
+        <div class="text-right cross" ng-click="showLoginDiv = false" style="font-size:12px;">X</div>
+        <div class="title-new">
+            <h2>Sign in with Email</h2>
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="" id="" class="form-control" ng-model="userName">
+
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="" id="" class="form-control" ng-model="emailId">
+        </div>
+        <p class="error" style="font-size:12px;margin:0" ng-show="errorExist">{{errorMsg}}</p>
+
+        <button type="submit" style="margin-top:10px;" class="btn btn-default signInBtn" routerLink="/todo">Log In</button>
+    </div>
+</div> -->
+<div class="container">
+    <div class="header">
+        <h1>To Do App</h1>
+    </div>
+    <div *ngIf="xyz" class="customContainer clearfix" (click)="back()">
+        <span class="cross" ng-click="showLoginDiv = false">X</span>
+    </div>
+    <div class="login-btns" *ngIf="!xyz">
+        <a class="google" (click)="tryGoogleLogin()"><img class="" src="../assets/images/google+icon.png" alt="">Login in with Google</a>
+        <a class="facebook" (click)="doFacebookLogin()"><img class="" src="../assets/images/facebook-icon.png" alt="">Login in with Facebook</a>
+        <a class="email" (click)="callE()"><img class="" src="../assets/images/mail-icon.png" alt="">Sign in with Email</a>
+    </div>
+    <div *ngIf="xyz" class="signInEmail">
+        <div class="small-container">
+            <div class="title-new">
+                <h2>Sign in with Email</h2>
+            </div>
+            <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+                <div class="login-form">
+                    <div class="form-group text-left">
+                        <label for="exampleInputEmail1">Email ID</label>
+                        <input required name="email" #email="ngModel" [(ngModel)]="loginInput.email" type="email" class="form-control" placeholder="Enter Email ID">
+                        <app-form-valid [formControlData]="email" [formGroupData]="loginForm"></app-form-valid>
+                    </div>
+                    <div class="form-group text-left">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input required name="password" #password="ngModel" [(ngModel)]="loginInput.password" type="password" class="form-control" placeholder="Password" autocomplete="on">
+                        <app-form-valid [formControlData]="password" [formGroupData]="loginForm"></app-form-valid>
+                    </div>
+                </div>
+                <button class="btn btn-small btn-primary-2 text-center">
+        <span>Login</span>
+        </button>
+            </form>
+        </div>
+    </div>
+</div>

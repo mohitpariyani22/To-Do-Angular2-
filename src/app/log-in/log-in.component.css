@@ -1,0 +1,123 @@
+.header {
+    background: #f5f2f2;
+    min-height: 200px;
+    position: relative;
+    margin-bottom: 1.5em;
+}
+
+.header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.small-container {
+    max-width: 400px;
+    text-align: left;
+    padding: 0 15px;
+    margin: 30px auto 50px;
+}
+
+.cross {
+    font-size: 1.2em;
+    font-weight: 700;
+    float: right;
+    padding-right: 20px;
+    cursor: pointer;
+    transition: all ease-out 500ms;
+}
+
+.cross:hover {
+    transform: scale(1.1);
+    color: #8a8888;
+    transition: all ease-in 500ms;
+}
+
+.customContainer {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.signInEmail h3 {
+    margin-bottom: 30px;
+}
+
+.signInEmail .cross {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.signInEmail .signInBtn {
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.title-new h2 {
+    margin: 0 0 20px;
+    font-size: 22px;
+    color: #424a53;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 767px) {
+    .title-new h2 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+}
+
+.login-btns {
+    text-align: center;
+}
+
+.login-btns a {
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.login-btns img {
+    border-right: solid 1px rgba(7, 7, 7, 0.2);
+    padding: 10px;
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+.email {
+    background-color: #fff;
+    color: #808080;
+}
+
+.facebook {
+    background-color: #5a5684;
+    color: #fff;
+}
+
+.google {
+    color: #fff;
+    background: #e0492e;
+}
+
+@media screen and (max-width: 767px) {
+    .login-btns a {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 10px;
+        text-align: left;
+        max-width: 200px;
+        margin: 0 auto 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .login-btns img {
+        max-height: 35px;
+    }
+}

@@ -12,14 +12,12 @@
     transform: translate(-50%, -50%);
 }
 
-.hover-cursor {
-    cursor: pointer;
+.homeHolder {
+    /* margin: 0 auto; */
 }
 
-.toDoList {
-    margin: 5px 0;
-}
-
-.logOutBtn {
-    float: right;
+.homeBtn {
+    text-align: center;
+    margin: 50px auto;
+    display: block;
 }
